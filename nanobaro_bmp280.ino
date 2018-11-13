@@ -31,7 +31,7 @@ void setup() {
 
   Serial.begin(4800);
 
-  if (!pressure.begin() ) {
+  if (!pressure.begin(0x76) ) {
     nmea_txt("BMP280 init fail");
     exit(1);
   }
@@ -65,7 +65,7 @@ void loop() {
   
       s = "";
       s = ",C," + String(temp) + ",C,TEMP";
-      s += ",P," + String(press / 1000.0, 5) + ",B,BARO"; // OpenCPN doesn't seem to grok Pascal (unit "P"), only Bar ("B")
+      s += ",P," + String(press / 100000.0, 5) + ",B,BARO"; // OpenCPN doesn't seem to grok Pascal (unit "P"), only Bar ("B")
       nmea_send("XDR", s);
       // These NMEA 0183 sentences are deprecated:
       //nmea_send("MTA", "," + String(temp) + ",C");
