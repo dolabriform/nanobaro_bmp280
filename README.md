@@ -1,7 +1,7 @@
 # nanobaro_bmp280
 This is for a Arduino Nano based Barometer and temperature sensor that outputs NMEA 0183 over USB so it can be read in Open CPN.
 
-It's based on work originally done by ingmar using a BMP180. You can read about this here: 
+It's based on work originally done by Ingmar using a BMP180. You can read about this here: 
 https://sdfjkl.org/blog/2017-08-09-nanobaro/
 
 This version was creeated for another user during this thread: 
